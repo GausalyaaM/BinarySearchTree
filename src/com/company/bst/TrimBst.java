@@ -1,20 +1,15 @@
 package com.company.bst;
-
 import java.util.Scanner;
-
 public class TrimBst {
     class Node {
         int key;
         Node left, right;
-
         public Node(int data) {
             key = data;
             left = right = null;
         }
     }
-
     Node root;
-
     public Node insert(Node root, int key) {
         if (root == null) {
             root = new Node(key);
@@ -28,11 +23,6 @@ public class TrimBst {
         }
         return root;
     }
-
-    /*void inOrder() {
-        inOrderRec(root);
-    }*/
-
     void inOrderRec(Node root) {
         if (root != null) {
             inOrderRec(root.left);
@@ -40,7 +30,6 @@ public class TrimBst {
             inOrderRec(root.right);
         }
     }
-
     private static Node removeOutsideRange(Node root, int min, int max) {
         if (root == null) {
             return null;
@@ -59,7 +48,6 @@ public class TrimBst {
         }
         return root;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         TrimBst tree = new TrimBst();

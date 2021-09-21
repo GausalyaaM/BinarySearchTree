@@ -35,6 +35,14 @@ public class Search {
         }
         return search(root.right, key);
     }
+    static void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.key+ " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Search tree = new Search();
@@ -48,6 +56,7 @@ public class Search {
         System.out.println("Enter the key to be checked");
         int keyVal = sc.nextInt();
         Node val=search(root,keyVal);
-        System.out.println(val.key);
+        //System.out.println(val.key);
+        preOrder(val);
     }
 }
